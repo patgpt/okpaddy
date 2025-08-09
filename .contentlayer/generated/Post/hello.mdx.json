@@ -1,0 +1,20 @@
+{
+  "title": "First Post",
+  "date": "2025-01-01T00:00:00.000Z",
+  "summary": "Hello Contentlayer2",
+  "published": true,
+  "body": {
+    "raw": "\n# Hello\n\nThis is a test post.",
+    "code": "var Component=(()=>{var h=Object.create;var s=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var d=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,_=Object.prototype.hasOwnProperty;var f=(t,n)=>()=>(n||t((n={exports:{}}).exports,n),n.exports),j=(t,n)=>{for(var o in n)s(t,o,{get:n[o],enumerable:!0})},c=(t,n,o,a)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let r of d(n))!_.call(t,r)&&r!==o&&s(t,r,{get:()=>n[r],enumerable:!(a=u(n,r))||a.enumerable});return t};var y=(t,n,o)=>(o=t!=null?h(p(t)):{},c(n||!t||!t.__esModule?s(o,\"default\",{value:t,enumerable:!0}):o,t)),C=t=>c(s({},\"__esModule\",{value:!0}),t);var l=f((D,i)=>{i.exports=_jsx_runtime});var M={};j(M,{default:()=>x,frontmatter:()=>F});var e=y(l()),F={title:\"First Post\",date:\"2025-01-01\",summary:\"Hello Contentlayer2\"};function m(t){let n={h1:\"h1\",p:\"p\",...t.components};return(0,e.jsxs)(e.Fragment,{children:[(0,e.jsx)(n.h1,{children:\"Hello\"}),`\n`,(0,e.jsx)(n.p,{children:\"This is a test post.\"})]})}function x(t={}){let{wrapper:n}=t.components||{};return n?(0,e.jsx)(n,{...t,children:(0,e.jsx)(m,{...t})}):m(t)}return C(M);})();\n;return Component;"
+  },
+  "_id": "hello.mdx",
+  "_raw": {
+    "sourceFilePath": "hello.mdx",
+    "sourceFileName": "hello.mdx",
+    "sourceFileDir": ".",
+    "contentType": "mdx",
+    "flattenedPath": "hello"
+  },
+  "type": "Post",
+  "slug": "hello"
+}

@@ -1,0 +1,67 @@
+{
+  "cacheItemsMap": {
+    "blog/first.mdx": {
+      "document": {
+        "title": "First Blog",
+        "date": "2025-01-01T00:00:00.000Z",
+        "summary": "Intro",
+        "published": true,
+        "body": {
+          "raw": "\n# Hello Blog\n\nMDX blog content.",
+          "code": "var Component=(()=>{var m=Object.create;var a=Object.defineProperty;var x=Object.getOwnPropertyDescriptor;var p=Object.getOwnPropertyNames;var u=Object.getPrototypeOf,g=Object.prototype.hasOwnProperty;var _=(t,n)=>()=>(n||t((n={exports:{}}).exports,n),n.exports),f=(t,n)=>{for(var o in n)a(t,o,{get:n[o],enumerable:!0})},l=(t,n,o,s)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let r of p(n))!g.call(t,r)&&r!==o&&a(t,r,{get:()=>n[r],enumerable:!(s=x(n,r))||s.enumerable});return t};var j=(t,n,o)=>(o=t!=null?m(u(t)):{},l(n||!t||!t.__esModule?a(o,\"default\",{value:t,enumerable:!0}):o,t)),b=t=>l(a({},\"__esModule\",{value:!0}),t);var i=_((X,c)=>{c.exports=_jsx_runtime});var D={};f(D,{default:()=>h,frontmatter:()=>M});var e=j(i()),M={title:\"First Blog\",date:\"2025-01-01\",summary:\"Intro\"};function d(t){let n={a:\"a\",h1:\"h1\",p:\"p\",span:\"span\",...t.components};return(0,e.jsxs)(e.Fragment,{children:[(0,e.jsxs)(n.h1,{id:\"hello-blog\",children:[(0,e.jsx)(n.a,{\"aria-hidden\":\"true\",tabIndex:\"-1\",href:\"#hello-blog\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"Hello Blog\"]}),`\n`,(0,e.jsx)(n.p,{children:\"MDX blog content.\"})]})}function h(t={}){let{wrapper:n}=t.components||{};return n?(0,e.jsx)(n,{...t,children:(0,e.jsx)(d,{...t})}):d(t)}return b(D);})();\n;return Component;"
+        },
+        "_id": "blog/first.mdx",
+        "_raw": {
+          "sourceFilePath": "blog/first.mdx",
+          "sourceFileName": "first.mdx",
+          "sourceFileDir": "blog",
+          "contentType": "mdx",
+          "flattenedPath": "blog/first"
+        },
+        "type": "Post",
+        "slug": "first",
+        "url": "/blog/first"
+      },
+      "documentHash": "1754698644257",
+      "hasWarnings": false,
+      "documentTypeName": "Post"
+    },
+    "services/web-design.mdx": {
+      "document": {
+        "title": "Web Design",
+        "slug": "web-design",
+        "summary": "Accessible, fast, stupidly-good websites that convert.",
+        "heroImage": "/content/media/services/web-design/hero.webp",
+        "heroAlt": "Landing page mockups on devices",
+        "priority": 1,
+        "published": true,
+        "ctaLabel": "Book a consult",
+        "ctaHref": "/contact",
+        "schemaType": "ProfessionalService",
+        "body": {
+          "raw": "\n<Lead>\n  We design fast, accessible websites with a crisp UX that makes conversions\n  feel inevitable.\n</Lead>\n\n<Section title=\"What you get\">\n  <Checklist\n    items={[\n      \"Research, IA, wireframes, accessible UI kit\",\n      \"Next.js + Tailwind + DaisyUI + analytics\",\n      \"Content modeling and CMS setup\",\n    ]}\n  />\n</Section>\n\n<CTA href=\"/contact\">Book a 30‑min consult</CTA>\n",
+          "code": "var Component=(()=>{var p=Object.create;var r=Object.defineProperty;var f=Object.getOwnPropertyDescriptor;var g=Object.getOwnPropertyNames;var b=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var w=(e,t)=>()=>(t||e((t={exports:{}}).exports,t),t.exports),y=(e,t)=>{for(var i in t)r(e,i,{get:t[i],enumerable:!0})},d=(e,t,i,o)=>{if(t&&typeof t==\"object\"||typeof t==\"function\")for(let s of g(t))!x.call(e,s)&&s!==i&&r(e,s,{get:()=>t[s],enumerable:!(o=f(t,s))||o.enumerable});return e};var C=(e,t,i)=>(i=e!=null?p(b(e)):{},d(t||!e||!e.__esModule?r(i,\"default\",{value:e,enumerable:!0}):i,e)),_=e=>d(r({},\"__esModule\",{value:!0}),e);var m=w((A,l)=>{l.exports=_jsx_runtime});var k={};y(k,{default:()=>h,frontmatter:()=>j});var n=C(m()),j={title:\"Web Design\",slug:\"web-design\",summary:\"Accessible, fast, stupidly-good websites that convert.\",heroImage:\"/content/media/services/web-design/hero.webp\",heroAlt:\"Landing page mockups on devices\",published:!0,priority:1};function u(e){let t={p:\"p\",...e.components},{CTA:i,Checklist:o,Lead:s,Section:a}=t;return i||c(\"CTA\",!0),o||c(\"Checklist\",!0),s||c(\"Lead\",!0),a||c(\"Section\",!0),(0,n.jsxs)(n.Fragment,{children:[(0,n.jsx)(s,{children:(0,n.jsx)(t.p,{children:`We design fast, accessible websites with a crisp UX that makes conversions\nfeel inevitable.`})}),`\n`,(0,n.jsx)(a,{title:\"What you get\",children:(0,n.jsx)(o,{items:[\"Research, IA, wireframes, accessible UI kit\",\"Next.js + Tailwind + DaisyUI + analytics\",\"Content modeling and CMS setup\"]})}),`\n`,(0,n.jsx)(i,{href:\"/contact\",children:\"Book a 30\\u2011min consult\"})]})}function h(e={}){let{wrapper:t}=e.components||{};return t?(0,n.jsx)(t,{...e,children:(0,n.jsx)(u,{...e})}):u(e)}function c(e,t){throw new Error(\"Expected \"+(t?\"component\":\"object\")+\" `\"+e+\"` to be defined: you likely forgot to import, pass, or provide it.\")}return _(k);})();\n;return Component;"
+        },
+        "_id": "services/web-design.mdx",
+        "_raw": {
+          "sourceFilePath": "services/web-design.mdx",
+          "sourceFileName": "web-design.mdx",
+          "sourceFileDir": "services",
+          "contentType": "mdx",
+          "flattenedPath": "services/web-design"
+        },
+        "type": "Service",
+        "url": "/services/web-design",
+        "readingTime": {
+          "text": "1 min read",
+          "minutes": 0.24,
+          "time": 14400,
+          "words": 48
+        }
+      },
+      "documentHash": "1754700932991",
+      "hasWarnings": false,
+      "documentTypeName": "Service"
+    }
+  }
+}

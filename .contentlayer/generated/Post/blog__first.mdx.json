@@ -1,0 +1,21 @@
+{
+  "title": "First Blog",
+  "date": "2025-01-01T00:00:00.000Z",
+  "summary": "Intro",
+  "published": true,
+  "body": {
+    "raw": "\n# Hello Blog\n\nMDX blog content.",
+    "code": "var Component=(()=>{var m=Object.create;var a=Object.defineProperty;var x=Object.getOwnPropertyDescriptor;var p=Object.getOwnPropertyNames;var u=Object.getPrototypeOf,g=Object.prototype.hasOwnProperty;var _=(t,n)=>()=>(n||t((n={exports:{}}).exports,n),n.exports),f=(t,n)=>{for(var o in n)a(t,o,{get:n[o],enumerable:!0})},l=(t,n,o,s)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let r of p(n))!g.call(t,r)&&r!==o&&a(t,r,{get:()=>n[r],enumerable:!(s=x(n,r))||s.enumerable});return t};var j=(t,n,o)=>(o=t!=null?m(u(t)):{},l(n||!t||!t.__esModule?a(o,\"default\",{value:t,enumerable:!0}):o,t)),b=t=>l(a({},\"__esModule\",{value:!0}),t);var i=_((X,c)=>{c.exports=_jsx_runtime});var D={};f(D,{default:()=>h,frontmatter:()=>M});var e=j(i()),M={title:\"First Blog\",date:\"2025-01-01\",summary:\"Intro\"};function d(t){let n={a:\"a\",h1:\"h1\",p:\"p\",span:\"span\",...t.components};return(0,e.jsxs)(e.Fragment,{children:[(0,e.jsxs)(n.h1,{id:\"hello-blog\",children:[(0,e.jsx)(n.a,{\"aria-hidden\":\"true\",tabIndex:\"-1\",href:\"#hello-blog\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"Hello Blog\"]}),`\n`,(0,e.jsx)(n.p,{children:\"MDX blog content.\"})]})}function h(t={}){let{wrapper:n}=t.components||{};return n?(0,e.jsx)(n,{...t,children:(0,e.jsx)(d,{...t})}):d(t)}return b(D);})();\n;return Component;"
+  },
+  "_id": "blog/first.mdx",
+  "_raw": {
+    "sourceFilePath": "blog/first.mdx",
+    "sourceFileName": "first.mdx",
+    "sourceFileDir": "blog",
+    "contentType": "mdx",
+    "flattenedPath": "blog/first"
+  },
+  "type": "Post",
+  "slug": "first",
+  "url": "/blog/first"
+}
