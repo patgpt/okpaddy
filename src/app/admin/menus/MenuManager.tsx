@@ -1,22 +1,42 @@
 "use client";
 
-import { MButton, MListBox } from "@/ui/motion-rac";
-import { ListBoxItem } from "react-aria-components";
+import { MButton } from "@/ui/motion-rac";
+import * as React from "react";
+import { ListBox, ListBoxItem, useDragAndDrop } from "react-aria-components";
 import { useAdminStore } from "../state/Provider";
-
-type NavNode = {
-  id: number | string;
-  label: string;
-  href: string;
-  order: number;
-};
+import { reorderByKeys } from "./reorderUtil";
 
 export default function MenuManager() {
-  const nodes = useAdminStore((s) => s.navItems) as unknown as NavNode[];
+  type ViewNode = {
+    id: string | number;
+    label: string;
+    href: string;
+    order: number;
+  };
+  const nodes = useAdminStore((s) => s.navItems);
+  const setNodes = useAdminStore((s) => s.setNavItems);
   const dirty = useAdminStore((s) => s.dirty);
   const markClean = useAdminStore((s) => s.markClean);
 
-  // TODO: wire up react-aria dnd once installed; placeholder reordering via click could be added
+  const { dragAndDropHooks } = useDragAndDrop({
+    getItems: (keys: Iterable<React.Key>) =>
+      [...keys].map((key) => ({ "text/plain": String(key) })),
+    onReorder(e) {
+      const next = reorderByKeys(nodes, new Set(e.keys), e.target);
+      setNodes(next);
+    },
+  });
+
+  const viewItems = React.useMemo<ViewNode[]>(
+    () =>
+      nodes.map((n) => ({
+        id: String(n.id),
+        label: n.label,
+        href: n.href,
+        order: n.order ?? 0,
+      })),
+    [nodes],
+  );
 
   async function save() {
     await fetch("/api/admin/menus/reorder", {
@@ -43,38 +63,27 @@ export default function MenuManager() {
         </MButton>
         {dirty && <span className="badge badge-warning">Unsaved changes</span>}
       </div>
-      <MListBox
+      <ListBox<ViewNode>
         aria-label="Menu items"
         selectionMode="multiple"
-        items={
-          nodes as unknown as {
-            id: string | number;
-            label: string;
-            href: string;
-            order: number;
-          }[]
-        }
+        items={viewItems}
+        dragAndDropHooks={dragAndDropHooks}
         className="bg-base-200 rounded-xl p-2"
-        initial={{ opacity: 0, y: 8 }}
-        animate={{ opacity: 1, y: 0 }}
       >
-        {(item) => {
-          const n = item as unknown as NavNode;
-          return (
-            <ListBoxItem
-              id={String(n.id)}
-              textValue={n.label}
-              className="hover:bg-base-300 flex justify-between rounded p-2"
-            >
-              <div className="flex flex-col">
-                <span className="font-medium">{n.label}</span>
-                <span className="text-xs opacity-70">{n.href}</span>
-              </div>
-              <span className="text-xs opacity-70">#{n.order}</span>
-            </ListBoxItem>
-          );
-        }}
-      </MListBox>
+        {(item: ViewNode) => (
+          <ListBoxItem
+            id={String(item.id)}
+            textValue={item.label}
+            className="hover:bg-base-300 flex justify-between rounded p-2"
+          >
+            <div className="flex flex-col">
+              <span className="font-medium">{item.label}</span>
+              <span className="text-xs opacity-70">{item.href}</span>
+            </div>
+            <span className="text-xs opacity-70">#{item.order}</span>
+          </ListBoxItem>
+        )}
+      </ListBox>
     </div>
   );
 }

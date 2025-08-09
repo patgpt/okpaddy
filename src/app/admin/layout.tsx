@@ -1,5 +1,7 @@
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+import { NavSidebar } from "./NavSidebar";
+import AdminTopbar from "./components/AdminTopbar";
 
 export default async function AdminLayout({
   children,
@@ -7,15 +9,16 @@ export default async function AdminLayout({
   children: React.ReactNode;
 }) {
   const user = await currentUser();
-  if (!user) {
-    redirect("/sign-in?redirect_url=/admin");
-  }
+  if (!user) redirect("/sign-in?redirect_url=/admin");
   return (
-    <section className="mx-auto max-w-5xl p-6">
-      <header className="mb-6 flex items-center justify-between">
-        <h1 className="text-2xl font-semibold">Admin</h1>
-      </header>
-      {children}
-    </section>
+    <div className="mx-auto flex max-w-6xl gap-6 px-4 md:px-6">
+      {/* Sidebar */}
+      <NavSidebar />
+      {/* Main */}
+      <section className="flex-1 py-6">
+        <AdminTopbar title="Admin" />
+        {children}
+      </section>
+    </div>
   );
 }

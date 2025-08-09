@@ -8,16 +8,9 @@ import Placeholder from "@tiptap/extension-placeholder";
 import Underline from "@tiptap/extension-underline";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
-import javascript from "highlight.js/lib/languages/javascript";
-import json from "highlight.js/lib/languages/json";
-import markdown from "highlight.js/lib/languages/markdown";
-import typescript from "highlight.js/lib/languages/typescript";
-import { lowlight } from "lowlight";
+import { common, createLowlight } from "lowlight";
 
-lowlight.registerLanguage("javascript", javascript);
-lowlight.registerLanguage("typescript", typescript);
-lowlight.registerLanguage("json", json);
-lowlight.registerLanguage("markdown", markdown);
+const lowlight = createLowlight(common);
 
 type Props = {
   value?: unknown;
@@ -54,6 +47,8 @@ export default function RichEditor({
         class: "prose prose-sm max-w-none dark:prose-invert focus:outline-none",
       },
     },
+    // Prevent SSR hydration mismatch per TipTap guidance
+    immediatelyRender: false,
   });
 
   if (!editor) return null;
@@ -69,7 +64,7 @@ export default function RichEditor({
     });
     if (!res.ok) return;
     const media = await res.json();
-    editor
+    editor!
       .chain()
       .focus()
       .setImage({ src: media.url, alt: media.alt ?? "" })

@@ -20,13 +20,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn(
-          (fonts.sans.variable, fonts.mono.variable, "antialiased"),
-        )}
-      >
-        <ClerkProvider>
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <body
+          className={cn(
+            (fonts.sans.variable, fonts.mono.variable, "antialiased"),
+          )}
+        >
           <AppThemeProvider>
             <ToastProvider>
               <div className="flex min-h-dvh flex-col">
@@ -36,8 +36,8 @@ export default function RootLayout({
               </div>
             </ToastProvider>
           </AppThemeProvider>
-        </ClerkProvider>
-      </body>
-    </html>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

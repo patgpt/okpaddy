@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import {
   Button,
   Checkbox,
+  ComboBox,
   Dialog,
   DropZone,
   FileTrigger,
@@ -14,7 +15,7 @@ import {
   Popover,
   Radio,
   RadioGroup,
-  Section,
+  Section, // TODO: remove this
   Select,
   SelectValue,
   Switch,
@@ -26,36 +27,34 @@ import {
   Tree,
 } from "react-aria-components";
 
-const make = motion.create;
+export const MForm = motion.create(Form);
+export const MButton = motion.create(Button);
+export const MTextField = motion.create(TextField);
+export const MInput = motion.create(Input);
+export const MTextArea = motion.create(TextArea);
 
-export const MForm = make(Form);
-export const MButton = make(Button);
-export const MTextField = make(TextField);
-export const MInput = make(Input);
-export const MTextArea = make(TextArea);
+export const MListBox = motion.create(ListBox);
+export const MListBoxItem = motion.create(ListBoxItem);
+export const MSection = motion.create(Section);
 
-export const MListBox = make(ListBox);
-export const MItem = make(ListBoxItem);
-export const MSection = make(Section);
+export const MComboBox = motion.create(ComboBox);
 
-export const MDialog = make(Dialog);
-export const MPopover = make(Popover);
+export const MDialog = motion.create(Dialog);
+export const MPopover = motion.create(Popover);
 
-export const MSelect = make(Select);
-export const MSelectValue = make(SelectValue);
+export const MSelect = motion.create(Select);
+export const MSelectValue = motion.create(SelectValue);
 
-export const MTabs = make(Tabs);
-export const MTabList = make(TabList);
-export const MTabPanel = make(TabPanel);
+export const MTabs = motion.create(Tabs);
+export const MTabList = motion.create(TabList);
+export const MTabPanel = motion.create(TabPanel);
 
-export const MSwitch = make(Switch);
-export const MCheckbox = make(Checkbox);
-export const MRadioGroup = make(RadioGroup);
-export const MRadio = make(Radio);
+export const MSwitch = motion.create(Switch);
+export const MCheckbox = motion.create(Checkbox);
+export const MRadioGroup = motion.create(RadioGroup);
+export const MRadio = motion.create(Radio);
 
-export const MDropZone = make(DropZone);
-export const MFileTrigger = make(FileTrigger);
+export const MDropZone = motion.create(DropZone);
+export const MFileTrigger = motion.create(FileTrigger);
 
-export const MTree = make(Tree);
-
-export { motion };
+export const MTree = motion.create(Tree);
